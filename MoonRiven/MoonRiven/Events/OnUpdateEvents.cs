@@ -38,10 +38,20 @@
                     return;
                 }
 
+                if (MenuInit.KeepQ && Me.HasBuff("RivenTriCleave"))
+                {
+                    if (Me.GetBuff("RivenTriCleave").EndTime - Game.Time < 0.3)
+                    {
+                        Q.Cast(Game.CursorPos, true);
+                    }
+                }
+
                 if (qStack != 0 && Utils.TickCount - lastQTime > 3800)
                 {   
                     qStack = 0;
                 }
+
+
             };
         }
 

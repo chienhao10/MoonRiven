@@ -88,6 +88,7 @@
             {
                 var qMenu = miscMenu.AddSubMenu(new Menu("Q Settings", "Q Settings"));
                 {
+                    qMenu.AddItem(new MenuItem("KeepQ", "Keep Q alive", true).SetValue(true));
                     qMenu.AddItem(
                         new MenuItem("QMode", "Q Mode: ", true).SetValue(new StringList(new[] {"To target", "To mouse"})));
                 }
@@ -164,6 +165,7 @@
         internal static bool FleeQ => Menu.Item("FleeQ", true).GetValue<bool>();
         internal static bool FleeW => Menu.Item("FleeW", true).GetValue<bool>();
         internal static bool FleeE => Menu.Item("FleeE", true).GetValue<bool>();
+        internal static bool KeepQ => Menu.Item("KeepQ", true).GetValue<bool>();
         internal static int QMode => Menu.Item("QMode", true).GetValue<StringList>().SelectedIndex;
         internal static bool AntiGapcloserW => Menu.Item("AntiGapcloserW", true).GetValue<bool>();
         internal static bool InterruptW => Menu.Item("InterruptW", true).GetValue<bool>();
