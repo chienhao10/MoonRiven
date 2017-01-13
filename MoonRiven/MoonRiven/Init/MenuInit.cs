@@ -23,6 +23,7 @@
             {
                 comboMenu.AddItem(new MenuItem("ComboQGap", "Use Q Gapcloser", true).SetValue(false));
                 comboMenu.AddItem(new MenuItem("ComboW", "Use W", true).SetValue(true));
+                comboMenu.AddItem(new MenuItem("ComboWLogic", "Use W Logic", true).SetValue(true));
                 comboMenu.AddItem(new MenuItem("ComboE", "Use E", true).SetValue(true));
                 comboMenu.AddItem(new MenuItem("ComboEGap", "Use E Gapcloser", true).SetValue(true));
                 comboMenu.AddItem(new MenuItem("ComboR1", "Use R1", true).SetValue(new KeyBind('G', KeyBindType.Toggle, true)));
@@ -138,6 +139,7 @@
 
         internal static bool ComboQGap => Menu.Item("ComboQGap", true).GetValue<bool>();
         internal static bool ComboW => Menu.Item("ComboW", true).GetValue<bool>();
+        internal static bool ComboWLogic => Menu.Item("ComboWLogic", true).GetValue<bool>();
         internal static bool ComboE => Menu.Item("ComboE", true).GetValue<bool>();
         internal static bool ComboEGap => Menu.Item("ComboEGap", true).GetValue<bool>();
         internal static bool ComboR => Menu.Item("ComboR1", true).GetValue<KeyBind>().Active;

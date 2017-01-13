@@ -50,8 +50,6 @@
                 {   
                     qStack = 0;
                 }
-
-
             };
         }
 
@@ -136,6 +134,30 @@
                     target.DistanceToPlayer() > Orbwalking.GetRealAutoAttackRange(Me) + 50)
                 {
                     E.Cast(target.Position, true);
+                }
+
+                if (MenuInit.ComboWLogic && W.IsReady() && target.IsValidTarget(W.Range))
+                {
+                    if (!Q.IsReady() && qStack == 0 && W.Cast(true))
+                    {
+                        return;
+
+                    }
+
+                    if (!target.IsFacing(Me) && W.Cast(true))
+                    {
+                        return;
+                    }
+
+                    if (Q.IsReady() && qStack > 0 && W.Cast(true))
+                    {
+                        return;
+                    }
+
+                    if (Me.HasBuff("RivenFeint"))
+                    {
+                        W.Cast(true);
+                    }
                 }
             }
         }
